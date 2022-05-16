@@ -14,7 +14,7 @@ export function getUserLocalStorage() {
    return user ?? null;
 }
 
-export async function LoginRequest ({email, password}: IUser) {
+export async function LoginRequest (email: string, password: string) {
    try {
       const request = await Api.post("login", { email, password });
 

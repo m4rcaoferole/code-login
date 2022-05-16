@@ -1,11 +1,10 @@
 export interface IUser {
    email?: string;
    token?: string;
-   password?: string;
 }
 
 export interface IContext extends IUser {
-   authenticate: ({ email, password }: IUser) => Promise<void>;
+   authenticate: (email: string, password:string) => Promise<void>;
    logout: () => void;
 }
 

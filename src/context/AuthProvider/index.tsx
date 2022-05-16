@@ -13,8 +13,8 @@ export const AuthProvider = ({ children }: IAuhtProvider) => { // Controlador do
       if(user) setUser(user)
    }, [])
 
-   async function authenticate({ email, password }: IUser) {
-      const response = await LoginRequest({ email, password });
+   async function authenticate(email: string, password:string) {
+      const response = await LoginRequest(email, password);
       const payload = { token: response.token, email } // User autenticado
 
       setUser(payload)
